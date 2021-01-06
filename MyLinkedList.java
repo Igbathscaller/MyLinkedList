@@ -15,13 +15,23 @@ public class MyLinkedList{
     }
     
     public boolean add(String value){
-        end.setNext()
-        end = value
-        size++; 
+        Node abc = new Node(value);
+        if (size == 0){
+            start = abc;
+            end = abc;
+            return true;
+        }
+        else{
+            Node k = end;
+            k.setNext(abc);
+            abc.setPrev(k);
+            end = abc;
+            size++;
+        } 
     }
     
     public boolean add(int index, String value){
-
+        return null;
     }
     
     public String get(int index){
