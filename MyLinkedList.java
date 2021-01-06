@@ -15,7 +15,9 @@ public class MyLinkedList{
     }
     
     public boolean add(String value){
-        end = 
+        end.setNext()
+        end = value
+        size++; 
     }
     
     public boolean add(int index, String value){

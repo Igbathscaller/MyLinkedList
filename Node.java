@@ -16,11 +16,11 @@ public class Node {
         return prev;
     }
 
-    public void setNext(){
-
+    public void setNext(Node ar){
+        next = ar;
     }
 
-    public void setPrev(){
-        
+    public void setPrev(Node ar){
+        prev = ar;
     }
 }
