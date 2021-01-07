@@ -30,7 +30,7 @@ public class MyLinkedList{
         for( int i = 0; i < index; i++ ){
             current = current.next();
         }
-        
+
         //temp value
         Node following = current.next();
         
@@ -40,16 +40,31 @@ public class MyLinkedList{
         //Chain abc -> following
         abc.setNext(following);
         following.setPrev(abc);
-
+        size++;
         return false;
     }
     
     public String get(int index){
-        return null;
+        Node current = start;
+        for( int i = 0; i < index; i++ ){
+            current = current.next();
+        }
+        return current.next().getValue();
     }
     
     public String set(int index, String value){
-        return null;
+        Node current = start;
+        for( int i = 0; i < index; i++ ){
+            current = current.next();
+        }
+        current = current.next();
+        
+        String temp = current.toString();
+
+        current.setValue(value);
+
+        return temp;
+
     }
     
     public String toString(){

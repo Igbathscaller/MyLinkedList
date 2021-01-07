@@ -15,6 +15,10 @@ public class Node {
         return data;
     }
 
+    public void setValue(String value){
+        data = value;
+    }
+
     public Node next(){
         return next;
     }
