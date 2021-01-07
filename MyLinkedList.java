@@ -6,8 +6,8 @@ public class MyLinkedList{
     
     public MyLinkedList(){
         size = 0;
-        start = null;
-        end = null;
+        start = new Node(null);
+        end = start;
     }
     
     public int size(){
@@ -16,19 +16,12 @@ public class MyLinkedList{
     
     public boolean add(String value){
         Node abc = new Node(value);
-        if (size == 0){
-            start = abc;
-            end = abc;
-            return true;
-        }
-        else{
-            Node k = end;
-            k.setNext(abc);
-            abc.setPrev(k);
-            end = abc;
-            size++;
-            return true;
-        }
+        Node k = end;
+        k.setNext(abc);
+        abc.setPrev(k);
+        end = abc;
+        size++;
+        return true;
     }
     
     public boolean add(int index, String value){
@@ -45,13 +38,11 @@ public class MyLinkedList{
     
     public String toString(){
 
-            if (size == 0){
-                return "[]";
-            }
-
-        String out = "[" + start.getValue();
+        String out = "[";
 
         Node current = start;
+        
+        //Start is a header and has absolutely nothing.
 
         while( current.hasNext() ){
             current = current.next();
@@ -60,7 +51,9 @@ public class MyLinkedList{
                 out += ',';
             }
         }
+
         return out + "]";
     }
+
 //Any helper method that returns a Node object MUST BE PRIVATE!
 }
