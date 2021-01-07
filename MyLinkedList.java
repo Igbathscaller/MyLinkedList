@@ -27,23 +27,40 @@ public class MyLinkedList{
             abc.setPrev(k);
             end = abc;
             size++;
-        } 
+            return true;
+        }
     }
     
     public boolean add(int index, String value){
-        return null;
+        return false;
     }
     
     public String get(int index){
-
+        return null;
     }
     
     public String set(int index, String value){
-
+        return null;
     }
     
     public String toString(){
 
+            if (size == 0){
+                return "[]";
+            }
+
+        String out = "[" + start.getValue();
+
+        Node current = start;
+
+        while( current.hasNext() ){
+            current = current.next();
+            out += current.getValue();
+            if ( current.hasNext() ){
+                out += ',';
+            }
+        }
+        return out + "]";
     }
 //Any helper method that returns a Node object MUST BE PRIVATE!
 }

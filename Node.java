@@ -19,8 +19,16 @@ public class Node {
         return next;
     }
 
+    public boolean hasNext(){
+        return next!=null;
+    }
+
     public Node prev(){
         return prev;
+    }
+
+    public boolean hasPrev(){
+        return prev!=null;
     }
 
     public void setNext(Node ar){
