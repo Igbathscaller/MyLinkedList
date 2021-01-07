@@ -6,5 +6,7 @@ public class Tester {
         System.out.println(Bob);
         Bob.add("what up my dudes?");
         System.out.println(Bob);
+        Bob.add(0,"Terrible");
+        System.out.println(Bob);
     }
 }

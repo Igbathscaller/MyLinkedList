@@ -25,6 +25,22 @@ public class MyLinkedList{
     }
     
     public boolean add(int index, String value){
+        Node abc = new Node(value);
+        Node current = start;
+        for( int i = 0; i < index; i++ ){
+            current = current.next();
+        }
+        
+        //temp value
+        Node following = current.next();
+        
+        //Chain current -> abc
+        current.setNext(abc);
+        abc.setPrev(current);
+        //Chain abc -> following
+        abc.setNext(following);
+        following.setPrev(abc);
+
         return false;
     }
     
