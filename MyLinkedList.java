@@ -31,8 +31,7 @@ public class MyLinkedList{
         }
 
         if (index==size){
-            this.add(value);
-            return true;
+            return this.add(value);
         }
         
         Node abc = new Node(value);
