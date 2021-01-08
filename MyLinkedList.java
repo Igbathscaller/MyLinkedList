@@ -25,6 +25,16 @@ public class MyLinkedList{
     }
     
     public boolean add(int index, String value){
+
+        if (index<0 || index>size){
+            throw new IndexOutOfBoundsException("Bad Index");
+        }
+
+        if (index==size){
+            this.add(value);
+            return true;
+        }
+        
         Node abc = new Node(value);
         Node current = start;
         for( int i = 0; i < index; i++ ){
@@ -45,6 +55,9 @@ public class MyLinkedList{
     }
     
     public String get(int index){
+        if (index<0 || index>=size){
+            throw new IndexOutOfBoundsException("Bad Index");
+        }
         Node current = start;
         for( int i = 0; i < index; i++ ){
             current = current.next();
@@ -53,6 +66,9 @@ public class MyLinkedList{
     }
     
     public String set(int index, String value){
+        if (index<0 || index>=size){
+            throw new IndexOutOfBoundsException("Bad Index");
+        }
         Node current = start;
         for( int i = 0; i < index; i++ ){
             current = current.next();
@@ -79,7 +95,25 @@ public class MyLinkedList{
             current = current.next();
             out += current.getValue();
             if ( current.hasNext() ){
-                out += ',';
+                out += ", ";
+            }
+        }
+
+        return out + "]";
+    }
+
+    public String toStringReversed(){
+        String out = "[";
+
+        Node current = end;
+        
+        //Start is a header and has absolutely nothing.
+
+        for(int i = 0; i<size; i++){
+            out += current.getValue();
+            current = current.prev();
+            if ( i < size-1 ){
+                out += ", ";
             }
         }
 

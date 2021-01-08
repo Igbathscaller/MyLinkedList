@@ -20,5 +20,6 @@ public class Tester {
         System.out.println(Bob.get(2));
         System.out.println(Bob);
         System.out.println(Bob.size());
+        
     }
 }
