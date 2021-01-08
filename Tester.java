@@ -20,6 +20,17 @@ public class Tester {
         System.out.println(Bob.get(2));
         System.out.println(Bob);
         System.out.println(Bob.size());
-        
+        MyLinkedList David = new MyLinkedList();
+        David.add("1");
+        David.add("2");
+        David.add("One");
+        Bob.extend(David);
+        System.out.println(Bob);
+        System.out.println(Bob.size());
+        System.out.println(David);
+        System.out.println(David.size());
+        David.add("twelve");
+        System.out.println(David);
+        System.out.println(David.size());
     }
 }
