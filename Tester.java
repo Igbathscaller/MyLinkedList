@@ -32,5 +32,9 @@ public class Tester {
         David.add("twelve");
         System.out.println(David);
         System.out.println(David.size());
+        System.out.println(Bob.remove(4));
+        System.out.println(Bob);
+        System.out.println(David.remove(0));
+        
     }
 }

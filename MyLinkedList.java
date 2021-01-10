@@ -140,7 +140,24 @@ public class MyLinkedList{
 
         other.size = 0;
     }
-   
+
+    public String remove(int index){
+        if (index<0 || index>=size){
+            throw new IndexOutOfBoundsException("Bad Index");
+        }
+        Node current = start;
+        for(int i = 0; i<index; i++){
+            current = current.next();
+        }
+        
+        Node output = current.next();
+
+        current.setNext(output.next());
+        output.next().setPrev(current);
+
+        return output.getValue();
+    }
+
 
 //Any helper method that returns a Node object MUST BE PRIVATE!
 }
