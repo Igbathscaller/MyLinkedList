@@ -16,7 +16,7 @@ public class Tester {
         System.out.println(Bob.get(2));
         System.out.println(Bob);
         System.out.println(Bob.size());
-        Bob.set(2,"one");
+        System.out.println(Bob.set(2,"one"));
         System.out.println(Bob.get(2));
         System.out.println(Bob);
         System.out.println(Bob.size());
@@ -35,6 +35,7 @@ public class Tester {
         System.out.println(Bob.remove(4));
         System.out.println(Bob);
         System.out.println(David.remove(0));
+        System.out.println(David);
         
     }
 }

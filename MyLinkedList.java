@@ -74,7 +74,7 @@ public class MyLinkedList{
         }
         current = current.next();
         
-        String temp = current.toString();
+        String temp = current.getValue();
 
         current.setValue(value);
 
@@ -126,6 +126,8 @@ public class MyLinkedList{
 
     public void extend(MyLinkedList other){
         
+        if (other.size!=0){
+
         Node abc = other.start.next();
         Node k = end;
         
@@ -139,21 +141,40 @@ public class MyLinkedList{
         other.end = other.start;
 
         other.size = 0;
+        
+        }
+
     }
 
     public String remove(int index){
+        
         if (index<0 || index>=size){
             throw new IndexOutOfBoundsException("Bad Index");
         }
+        
+        Node output;
+        Node connection;
+
+        if (index == size-1){
+            output = end;
+            end = output.prev();
+            end.setNext(null);            
+            size--;
+            return output.getValue();
+        }
+
         Node current = start;
         for(int i = 0; i<index; i++){
             current = current.next();
         }
         
-        Node output = current.next();
+        output = current.next();
+        connection = output.next();
 
-        current.setNext(output.next());
-        output.next().setPrev(current);
+        current.setNext(connection);
+        connection.setPrev(current);
+
+        size--;
 
         return output.getValue();
     }
